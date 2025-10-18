@@ -1,0 +1,235 @@
+index.html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LA MAMBA — Fine dining reimagined</title>
+  <meta name="description" content="LA MAMBA — Luxury fine dining restaurant in Rabat. Seasonal tasting menus, private dining, and an elegant atmosphere.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070707;
+      --panel: rgba(255,255,255,0.03);
+      --text:#efeae6;
+      --muted:#bfb6ac;
+      --accent:#c7a86b; /* soft gold */
+      --maxw:1100px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg,#050505,var(--bg));
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:28px 12px;
+    }
+    .wrap{max-width:var(--maxw);margin:0 auto;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
+    .brand{font-family:'Playfair Display',serif;font-size:30px;letter-spacing:1px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:start;margin-top:18px;
+    }
+    .hero-left h1{font-family:'Playfair Display',serif;font-size:46px;margin:0 0 12px}
+    .hero-left p.lead{color:var(--muted);margin:0 0 20px;line-height:1.6;font-size:16px}
+    .btn{
+      display:inline-block;padding:12px 20px;border-radius:8px;background:transparent;border:1px solid rgba(199,168,107,0.16);color:var(--accent);font-weight:600;text-decoration:none;
+      backdrop-filter: blur(2px);
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+    }
+    .menu-grid{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .menu h3{font-family:'Playfair Display',serif;margin:0 0 8px}
+    .dish{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .dish p{margin:0;color:var(--muted);font-size:14px}
+    .price{font-weight:600;color:var(--text)}
+    .hero-photo{width:100%;height:320px;border-radius:10px;overflow:hidden;display:block;object-fit:cover}
+    .small{font-size:13px;color:var(--muted)}
+    .section-title{font-family:'Playfair Display',serif;font-size:22px;margin:0 0 10px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    footer{margin-top:36px;border-top:1px solid rgba(255,255,255,0.03);padding-top:20px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap}
+    a.link{color:var(--muted);text-decoration:none}
+    /* Reservation form */
+    form input, form textarea, form select{
+      width:100%;padding:10px;margin:6px 0 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--text);
+    }
+    form label{font-size:13px;color:var(--muted)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .gold{color:var(--accent)}
+    /* Gallery */
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px;display:block}
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr;gap:18px}
+      .menu-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .two-col{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){
+      .grid-3{grid-template-columns:1fr}
+    }
+    /* small animation */
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp .7s ease forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="fade-up" style="animation-delay:.05s">
+      <div class="brand">LA MAMBA</div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#reservations">Reservations</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="Hero" style="margin-top:8px">
+      <div class="hero-left fade-up" style="animation-delay:.1s">
+        <h1>Fine dining reimagined.</h1>
+        <p class="lead">An intimate experience of modern flavours. Seasonal menu · Impeccable service.</p>
+        <a class="btn" href="#reservations">Reserve a table</a>
+
+        <div id="menu" class="menu-grid" style="margin-top:28px">
+          <div class="card fade-up" style="animation-delay:.15s">
+            <h3>Signature Menu</h3>
+            <div class="dish"><div><strong>1. Lobster Velouté</strong><p class="small">silky lobster cream, citrus oil, micro herbs</p></div><div class="price">180 DH</div></div>
+            <div class="dish"><div><strong>2. Seared Duck Breast</strong><p class="small">cherry jus, roasted roots, herb espuma</p></div><div class="price">220 DH</div></div>
+            <div class="dish"><div><strong>3. Black Cod Misoyaki</strong><p class="small">miso glaze, spring herbs, beurre blanc</p></div><div class="price">240 DH</div></div>
+            <div class="dish"><div><strong>4. Lamb Loin</strong><p class="small">spiced jus, confit carrot, olive crumble</p></div><div class="price">260 DH</div></div>
+            <div class="dish"><div><strong>5. Chocolate Fondant</strong><p class="small">warm centre, salted caramel gelato</p></div><div class="price">150 DH</div></div>
+          </div>
+
+          <div class="card fade-up" style="animation-delay:.18s">
+            <h3>Private Dining</h3>
+            <p class="small">Bespoke tasting menus and exclusive space for private events. Contact us to design a personalized experience.</p>
+            <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+            <p class="small"><strong>City:</strong> Rabat</p>
+            <p class="small"><strong>Phone:</strong> +212 0677665345</p>
+            <p class="small"><strong>Email:</strong> contact@lamamba.com</p>
+            <p class="small"><strong>Address:</strong> 123 Luxury Avenue, Rabat</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card fade-up" style="animation-delay:.2s;align-self:start">
+        <img class="hero-photo" src="https://source.unsplash.com/800x600/?fine-dining,restaurant,interior" alt="LA MAMBA interior — elegant dining room">
+        <div style="margin-top:14px;text-align:center;color:var(--muted)">
+          <p style="margin:6px 0"><strong class="gold">Open nightly</strong></p>
+          <p class="small" style="margin:6px 0">Private dining & tasting menus available</p>
+          <a class="btn" href="#reservations" style="margin-top:8px;display:inline-block">Book a table</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" style="margin-top:30px" class="fade-up" style="animation-delay:.22s">
+      <div class="card">
+        <h3 class="section-title">About LA MAMBA</h3>
+        <p class="small">At LA MAMBA in Rabat we celebrate refined simplicity: locally sourced ingredients, artful plating and an atmosphere that is both intimate and sophisticated. Chef [Name] crafts seasonal menus inspired by Mediterranean and global flavours.</p>
+      </div>
+    </section>
+
+    <section id="reservations" style="margin-top:28px" class="fade-up" style="animation-delay:.24s">
+      <div class="card">
+        <h3 class="section-title">Reserve a table</h3>
+        <p class="small">Fill the form below and we will confirm your booking by phone or email.</p>
+        <form method="POST" action="https://formspree.io/f/your_form_id_here">
+          <div class="two-col">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" required placeholder="Your full name">
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" required placeholder="+212 0677665345">
+            </div>
+          </div>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required placeholder="contact@lamamba.com">
+
+          <div class="two-col">
+            <div>
+              <label for="date">Date</label>
+              <input id="date" type="date" name="date" required>
+            </div>
+            <div>
+              <label for="time">Time</label>
+              <input id="time" type="time" name="time" required>
+            </div>
+          </div>
+
+          <label for="guests">Guests</label>
+          <select id="guests" name="guests" required>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7+</option>
+          </select>
+
+          <label for="notes">Notes / Special requests</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Dietary restrictions, celebration, etc."></textarea>
+
+          <button type="submit" class="btn" style="margin-top:6px">Request reservation</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="gallery" style="margin-top:28px" class="fade-up" style="animation-delay:.26s">
+      <div class="card">
+        <h3 class="section-title">Gallery</h3>
+        <div class="grid-3 gallery" style="margin-top:8px">
+          <img src="https://source.unsplash.com/600x400/?fine-dining,plated-dish" alt="Signature plated dish">
+          <img src="https://source.unsplash.com/600x400/?restaurant,interior,luxury" alt="Interior dining">
+          <img src="https://source.unsplash.com/600x400/?chef,plating,restaurant" alt="Chef plating dish">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px" class="fade-up" style="animation-delay:.28s">
+      <div class="card">
+        <h3 class="section-title">Contact & Location</h3>
+        <div style="display:flex;gap:20px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px">
+            <p class="small"><strong>Address</strong><br>123 Luxury Avenue, Rabat</p>
+            <p class="small"><strong>Phone</strong><br>+212 0677665345</p>
+            <p class="small"><strong>Email</strong><br>contact@lamamba.com</p>
+          </div>
+
+          <div style="flex:1;min-width:260px">
+            <p class="small"><strong>Where to find us</strong></p>
+            <a class="link small" href="#" target="_blank" rel="noopener">Open in Google Maps</a>
+            <p class="small" style="margin-top:8px">Private dining & events available. Please contact us for bespoke menus and closures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="fade-up" style="animation-delay:.3s">
+      <div>© <strong>LA MAMBA</strong> — Fine dining reimagined</div>
+      <div class="small">Built with care • Demo site</div>
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fade-up').forEach((el, i) => {
+        el.style.animationDelay = (0.05 + i*0.04) + 's';
+      });
+    });
+  </script>
+</body>
+</html>
+
